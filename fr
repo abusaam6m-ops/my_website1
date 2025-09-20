@@ -1,0 +1,89 @@
+<header>
+  <div class="logo">الاستثمار الأولى</div>
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </label>
+  <nav>
+    <a href="#commercial">الخدمات التجارية</a>
+    <a href="#municipal">خدمات البلدية</a>
+    <a href="#government">الخدمات الحكومية</a>
+    <a href="#tax">الخدمات الزكوية والضريبية</a>
+    <a href="#contact">اتصل بنا</a>
+  </nav>
+</header>
+
+<style>
+/* Header الأساسي */
+header {
+  background: linear-gradient(135deg, #195cab, #2bc58a);
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* أيقونة القائمة على الجوال */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Nav العادي */
+header nav {
+  display: flex;
+  gap: 15px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+header nav a:hover {
+  opacity: 0.8;
+}
+
+/* Media Query للجوال */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  /* إخفاء الروابط بشكل افتراضي */
+  header nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  header nav a {
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+
+  /* عرض الروابط عند الضغط على الأيقونة */
+  #menu-toggle:checked + .menu-icon + nav {
+    display: flex;
+  }
+}
+
+/* إخفاء input checkbox */
+#menu-toggle {
+  display: none;
+}
+</style>
