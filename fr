@@ -1,89 +1,259 @@
-<header>
-  <div class="logo">الاستثمار الأولى</div>
-  <input type="checkbox" id="menu-toggle" />
-  <label for="menu-toggle" class="menu-icon">
-    <i class="fas fa-bars"></i>
-  </label>
-  <nav>
-    <a href="#commercial">الخدمات التجارية</a>
-    <a href="#municipal">خدمات البلدية</a>
-    <a href="#government">الخدمات الحكومية</a>
-    <a href="#tax">الخدمات الزكوية والضريبية</a>
-    <a href="#contact">اتصل بنا</a>
-  </nav>
-</header>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاستثمار الأولى – خدمات متنوعة</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-/* Header الأساسي */
-header {
-  background: linear-gradient(135deg, #195cab, #2bc58a);
-  color: #fff;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  flex-wrap: wrap;
-}
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      direction: rtl;
+      line-height: 1.6;
+    }
 
-header .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-}
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #195cab, #2bc58a);
+      color: #fff;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
 
-/* أيقونة القائمة على الجوال */
-.menu-icon {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
 
-/* Nav العادي */
-header nav {
-  display: flex;
-  gap: 15px;
-}
+    header nav {
+      display: flex;
+      gap: 15px;
+    }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opacity 0.3s ease;
-}
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
 
-header nav a:hover {
-  opacity: 0.8;
-}
+    header nav a:hover {
+      opacity: 0.8;
+    }
 
-/* Media Query للجوال */
-@media (max-width: 768px) {
-  .menu-icon {
-    display: block;
-  }
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 
-  /* إخفاء الروابط بشكل افتراضي */
-  header nav {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 10px;
-  }
+    #menu-toggle {
+      display: none;
+    }
 
-  header nav a {
-    padding: 10px 0;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
+    /* HERO */
+    .hero {
+      background: url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
 
-  /* عرض الروابط عند الضغط على الأيقونة */
-  #menu-toggle:checked + .menu-icon + nav {
-    display: flex;
-  }
-}
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
 
-/* إخفاء input checkbox */
-#menu-toggle {
-  display: none;
-}
-</style>
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #195cab;
+      font-size: 1.8rem;
+    }
+
+    details {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 15px 20px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #2bc58a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    summary i {
+      margin-left: 10px;
+    }
+
+    details .services-list {
+      padding: 15px 20px;
+      max-height: 400px;
+      overflow-y: auto;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    details li {
+      list-style: none;
+      padding: 8px 0;
+      border-bottom: 1px dashed #eee;
+      font-size: 1rem;
+    }
+
+    details li:last-child {
+      border-bottom: none;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #2bc58a, #195cab);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 30px;
+      border-radius: 8px;
+    }
+
+    .cta-section h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .cta-section p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section a {
+      background: #fff;
+      color: #195cab;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .cta-section a:hover {
+      background: #e6e6e6;
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 30px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      header nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+      }
+
+      header nav a {
+        padding: 10px 0;
+        border-top: 1px solid rgba(255,255,255,0.2);
+      }
+
+      #menu-toggle:checked + .menu-icon + nav {
+        display: flex;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">الاستثمار الأولى</div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">
+      <i class="fas fa-bars"></i>
+    </label>
+    <nav>
+      <a href="#commercial">الخدمات التجارية</a>
+      <a href="#municipal">خدمات البلدية</a>
+      <a href="#government">الخدمات الحكومية</a>
+      <a href="#tax">الخدمات الزكوية والضريبية</a>
+      <a href="#contact">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>منصتك الشاملة لخدمات الأعمال والحكومة</h1>
+      <p>نوفر لك مجموعة متكاملة من الخدمات التجارية والبلدية والحكومية والضريبية بطريقة حديثة وبتصميم شبابي جذاب.</p>
+    </div>
+  </section>
+
+  <!-- يمكنك إضافة نفس تفاصيل Sections كما في الكود الأصلي -->
+
+  <section class="cta-section" id="contact">
+    <h3>هل تحتاج مساعدة في اختيار الخدمة المناسبة؟</h3>
+    <p>تواصل معنا عبر البريد الإلكتروني F2024ali22@gmail.com أو الهاتف 0539530566 للحصول على استشارة مجانية.</p>
+    <a href="https://wa.me/+966539530566">راسلنا الآن</a>
+  </section>
+
+  <footer>
+    © 2025 الاستثمار الأولى – جميع الحقوق محفوظة
+  </footer>
+</body>
+</html>
